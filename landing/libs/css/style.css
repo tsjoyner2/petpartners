@@ -80,16 +80,27 @@ a {
     color:#900;
     text-decoration:underline;
     transition:background-color 200ms ease;
+-ms-word-break: break-all;
+
+     /* Be VERY careful with this, breaks normal words wh_erever */
+     word-break: break-all;
+
+     /* Non standard for webkit */
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
 }
 a:active, a:hover, a:focus {
     color:#aaa;
     outline:0;
 }
-a[href^=/], a[href^=..] {
+a[href^='/'], a[href^='..'] {
     color:#a75e3f;
     font:inherit;
 }
-a[href^=/]:hover, a[href^=..]:hover {
+a[href^='/']:hover, a[href^='..']:hover {
     background:#6eb296;
     color:#fff;
     font:inherit;
@@ -952,20 +963,20 @@ margin: 0 auto;display:block;}
 }
 .mastfoot {
     font-size:80%;
-    padding:25px 0;
+    padding:25px;
 }
 .legal, .copyright {
     color:#777;
     vertical-align:top;
-    padding:25px;
 }
 .copyright {
-    margin-top:25px;
+	margin-top:15px;
     text-align:right;
 }
 .legal {
     border-top:1px solid #ddd;
 }
+
 @media (min-width:600px) {
     .legal, .copyright {
         display:inline-block;
@@ -1054,7 +1065,7 @@ margin: 0 auto;display:block;}
 [hidden], template, .bx-wrapper .bx-controls-direction a.disabled, .pet-type input[type=radio], .testimonials ul li:nth-child(2), .testimonials ul li:nth-child(3) {
     display:none;
 }
-a[href^=mailto:]:before:hover, a[href$=.pdf]:before:hover, a[href$=.doc]:before:hover, a[href*=youtu]:before:hover, a[href$=.zip]:before:hover, a[href$=.tar.gz]:before:hover, a[href$=.7z]:before:hover {
+a[href^='mailto:']:before:hover, a[href$='.pdf']:before:hover, a[href$='.doc']:before:hover, a[href*='youtu']:before:hover, a[href$='.zip']:before:hover, a[href$='.tar.gz']:before:hover, a[href$='.7z']:before:hover {
     content:' ';
 }
 optgroup, .addition-info ol li p strong, .addition-info ol li strong, .addition-info ul li p strong, .addition-info ul li strong, .addition-info p strong {

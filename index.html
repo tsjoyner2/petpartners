@@ -6,7 +6,7 @@
   <link rel="dns-prefetch" href="www.google-analytics.com">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>PetPartners, LLC.</title>
-  <meta name="description" content="">
+  <meta name="description" content>
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
@@ -21,7 +21,7 @@
   <header role="banner" class="masthead">
   <div class="inner">
     <div class="logo">
-      <img src="http://placehold.it/185x85" width="185" height="85" alt="">
+      <img src="http://placehold.it/185x85" width="185" height="85" alt>
     </div>
     <div class="tagline">
       <strong>Protected over 1.5 million pets since 2003</strong><br>Have questions? Call us at 1-877-725-2747
@@ -39,10 +39,38 @@
     <h1 role="heading">Avoid unexpected vet bills so you can make the<br>right choice about your pet's future</h1>
     <div class="cf">
 
+<!--fieldset>
+  <!--[if !IE | (gte IE 8)]-->
+  <!--legend id="title1" class="desc">
+    Select a Choice
+      </legend>
+  <!--[endif]-->
+  <!--[if lt IE 8]>
+  <label id="title1" class="desc">
+    Select a Choice
+      </label>
+  <![endif]-->
+  <!--div>
+  <input id="radioDefault_1" name="Field1" type="hidden" value="">
+    <span>
+  <input id="Field1_0" name="Field1" type="radio" class="field radio" value="First Choice" tabindex="1" onchange="handleInput(this);" onmouseup="handleInput(this);" checked="checked">
+  <label class="choice" for="Field1_0">
+    First Choice</label>
+    </span>
+    <span>
+  <input id="Field1_1" name="Field1" type="radio" class="field radio" value="Second Choice" tabindex="2" onchange="handleInput(this);" onmouseup="handleInput(this);">
+  <label class="choice" for="Field1_1">
+    Second Choice</label>
+    </span>
+    </div>
+  </fieldset-->
+
+
       <section class="quote-form">
         <h2><span>Get a Quote</span><hr></h2>
         <div class="pet-type cf">
           <form>
+          <input id="radioDefault" name="pet-type" type="hidden" value>
           <div class="canine">
             <label for="select-dog">Dog<figure class="canine-icon"></figure></label>
             <input id="select-dog" type="radio" name="pet-type" value="Dog">
@@ -63,7 +91,7 @@
           <button role="button" type="submit">Get Quote</button>
           <span>Or call 1-877-725-2747</span>
           <div class="satisfaction-details">
-            <img src="http://placehold.it/85x85" width="85" height="85" alt="">
+            <img src="http://placehold.it/85x85" width="85" height="85" alt>
             <p>If you're not 100% satisfied in the first 30 days, We'll refund your full premium<br><small>*See Disclaimers</small></p>
           </div>
           </form>
@@ -85,34 +113,48 @@
 
         <div class="testimonials">
           <h3 role="heading">Real customers. Real protection.</h3>
-          <ul role="list">
+          <ul role="list" class="bxslider">
             <li role="listitem">
               <div class="slide one">
                 <q>Diesel completes our family and we are so thankful that he had insurance so we didn't have to make a hard decision solely based on finances.</q>
                 <cite>~ Chelsie and Ben, AKC Pet Healthcare Plan customer, November 2013</cite>
               </div>
-              <img src="http://placehold.it/250x250" width="250" height="250" alt="">
+              <img src="libs/img/quote-1-img.png" width="250" height="250" alt>
             </li>
             <li role="listitem">
               <div class="slide two">
-                <q>Diesel completes our family and we are so thankful that he had insurance so we didn't have to make a hard decision solely based on finances.</q>
-                <cite>~ Chelsie and Ben, AKC Pet Healthcare Plan customer, November 2013</cite>
+                <q>We love the pet insurance 
+                    program. We are thankful we got 
+                    it for our lab. She's had several 
+                    surgeries and even cancer in her 
+                    young 7 years. Without the 
+                    insurance, we would have to make
+                     some tough decisions.</q>
+                <cite>~ Becky, AKC Pet Healthcare Plan customer September 2013</cite>
+
               </div>
-              <img src="http://placehold.it/250x250" width="250" height="250" alt="">
+              <img src="libs/img/quote-2-img.png" width="250" height="250" alt>
             </li>
             <li role="listitem">
               <div class="slide three">
-                <q>Diesel completes our family and we are so thankful that he had insurance so we didn't have to make a hard decision solely based on finances.</q>
-                <cite>~ Chelsie and Ben, AKC Pet Healthcare Plan customer, November 2013</cite>
+                <q>Our Black Russian Terrier had a 
+                  serious immune response to 
+                  vaccination and became severely 
+                  anemic. Thank heavens for our 
+                  insurance. The price is reasonable 
+                  and the plan pays off quickly. 
+                  I highly recommend the insurance 
+                  plan.</q>
+                <cite>~ Brad, AKC Pet Healthcare Plan customer October 2011</cite>
               </div>
-              <img src="http://placehold.it/250x250" width="250" height="250" alt="">
+              <img src="libs/img/quote-3-img.png" width="250" height="250" alt>
             </li>
           </ul>
-          <div class="bullets">
+          <!--div class="bullets">
             <a href="#" class="active"></a>
             <a href="#"></a>
             <a href="#"></a>
-          </div>
+          </div-->
         </div>
       </section>
 
@@ -139,7 +181,7 @@
       <section class="how-it-works">
         <h4 role="heading">How pet insurance works</h4>
         <ol role="list" class="how-steps">
-          <li role="listitem"><p><strong>Visit your veterinarian of your choice</strong>and pay for the service</p></li>
+          <li role="listitem"><p><strong>Visit your veterinarian of your choice</strong> and pay for the service</p></li>
           <li role="listitem"><p><strong>Have your veterinarian fill out the claim form</strong> to tell us what your pet required</p></li>
           <li role="listitem"><p><strong>Fill out the rest of the form and file it</strong> by email, mail, or fax with the receipt</p></li>
         </ol>
@@ -152,7 +194,7 @@
         <p><strong>AKC Pet Healthcare is the exclusive and trusted pet insurance provider</strong><br>of the American Kennel Club and the Cat Fanciers' Association</p>
         <h5>4 reasons why customers and associations choose us:</h5>
         <ol role="list">
-          <li role="listitem"><strong>30-day money back guarantee</strong>and freedom to cancel anytime*</li>
+          <li role="listitem"><strong>30-day money back guarantee</strong> and freedom to cancel anytime*</li>
           <li role="listitem"><strong>Hassle-free customer service</strong></li>
           <li role="listitem"><strong>Customizable plans</strong></li>
           <li role="listitem"><strong>Up to 180 days to file a claim</strong></li>
@@ -222,7 +264,7 @@
         <!-- /Navigation removal? -->
 
           <p>Copyright &copy; PetPartners, Inc. &reg; All Rights Reserved | Pet insurance Plans<br>AKC and the AKC logo are trademarks of the <a role="link" href="#">American Kennel Club</a>.</p>
-          <img src="http://placehold.it/150x85" width="150" height="85" alt="">
+          <img src="http://placehold.it/150x85" width="150" height="85" alt>
         </div>
       </div>
       <div class="social">
@@ -234,7 +276,20 @@
       </div>
     </div>
   </footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <!--script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script-->
+  <script src="libs/js/bx-slider.min.js"></script>
+  <script>
+    $(function(){
 
+      $('.testimonials .bxslider').bxSlider({
+        auto: true,
+        mode: 'fade',
+        speed: 500
+      });
+
+    });
+  </script>
 
 </body>
 

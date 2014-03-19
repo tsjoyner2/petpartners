@@ -22,7 +22,7 @@
   <header role="banner" class="masthead">
   <div class="inner">
     <div class="logo">
-      <img src="http://placehold.it/185x85" width="185" height="85" alt>
+      <img src="libs/img/logo.svg" width="185" height="85" alt>
     </div>
     <div class="tagline">
       <strong>Protected over 1.5 million pets since 2003</strong><br>Have questions? Call us at 1-877-725-2747
@@ -67,16 +67,20 @@
   </fieldset-->
 
 
-      <section class="quote-form">
-        <h2><span>Get a Quote</span><hr></h2>
-        <div class="pet-type cf">
+      <section class="quote-form" style="padding:0;border-top-left-radius:0;position:relative;margin-top:35px;">
+        <h2 style="position:absolute;left:0;top:-49px;width:200px;padding-bottom:25px;">
+          <svg viewBox="0 0 100 25" class="shape-tab" style="height:50px;fill: #0066bc;">
+            <use xlink:href="#shape-tab"></use>
+          </svg>
+          <span style="margin-top:-70px;padding:25px 15px;">Get a Quote</span></h2>
+        <div class="pet-type cf" style="padding-top:25px;">
           <form>
           <input id="radioDefault" name="pet-type" type="hidden" value>
           <div class="canine">
             <label for="select-dog">Dog<figure class="canine-icon"></figure></label>
             <input id="select-dog" type="radio" name="pet-type" value="Dog">
           </div>
-          <span class="or">or</span>
+          <span class="or">Or</span>
           <div class="felion">
             <label for="select-cat">Cat<figure class="icon-cat"></figure></label>
             <input id="select-cat" type="radio" name="pet-type" value="Cat">
@@ -90,10 +94,10 @@
             <option>...</option>
           </select>
           <button role="button" type="submit">Get Quote</button>
-          <span>Or call 1-877-725-2747</span>
+           <span>Or call 1-877-725-2747</span>
           <div class="satisfaction-details">
-            <img src="http://placehold.it/85x85" width="85" height="85" alt>
-            <p>If you're not 100% satisfied in the first 30 days, We'll refund your full premium<br><small>*See Disclaimers</small></p>
+            <img src="libs/img/30-day.png" width="85" height="85" alt>
+            <p>If you're not 100% satisfied in the first 30 days, we'll refund your full premium<br><small>*See Disclaimers</small></p>
           </div>
           </form>
         </div>
@@ -105,7 +109,7 @@
           <ul role="list">
             <li role="listitem"><strong>No Contract</strong>&mdash; Cancel anytime</li>
             <li role="listitem"><strong>We reimburse 80% of your vet bills</strong></li>
-            <li role="listitem"><strong>No Network</strong>&mdash; Choose any veterinarian, specialist or animal hospitol</li>
+            <li role="listitem"><strong>No Network</strong>&mdash; Choose any veterinarian, specialist or animal hospital</li>
             <li role="listitem"><strong>No enrollment fees or exam to sign up</strong></li>
             <li role="listitem"><strong>Customize limits and payment options to fit your budget</strong></li>
             <li role="listitem"><strong>The best wellness and coverage system in the business</strong></li>
@@ -131,7 +135,7 @@
                     young 7 years. Without the 
                     insurance, we would have to make
                      some tough decisions.</q>
-                <cite>~ Becky, AKC Pet Healthcare Plan customer September 2013</cite>
+                <cite>~ Becky, AKC Pet Healthcare Plan customer, September 2013</cite>
 
               </div>
               <img src="libs/img/quote-2-img.png" width="250" height="250" alt>
@@ -146,7 +150,7 @@
                   and the plan pays off quickly. 
                   I highly recommend the insurance 
                   plan.</q>
-                <cite>~ Brad, AKC Pet Healthcare Plan customer October 2011</cite>
+                <cite>~ Brad, AKC Pet Healthcare Plan customer, October 2011</cite>
               </div>
               <img src="libs/img/quote-3-img.png" width="250" height="250" alt>
             </li>
@@ -173,7 +177,7 @@
           <li role="listitem">Cancer</li>
           <li role="listitem">Accidents</li>
           <li role="listitem">Laboratory tests, X-rays, ultrasound, MRI and CAT Scans</li>
-          <li role="listitem">Surgery and hospitolization</li>
+          <li role="listitem">Surgery and hospitalization</li>
           <li role="listitem">Veterinarian Prescription Medication</li>
         </ul>
         <a role="link" href="#" class="button">Learn more</a>
@@ -186,7 +190,7 @@
           <li role="listitem"><p><strong>Have your veterinarian fill out the claim form</strong> to tell us what your pet required</p></li>
           <li role="listitem"><p><strong>Fill out the rest of the form and file it</strong> by email, mail, or fax with the receipt</p></li>
         </ol>
-        <p>We reimburse you directly. <strong>Most claims are proccessed within 30 days</strong></p>
+        <p>We reimburse you directly. <strong>Most claims are processed within 30 days</strong></p>
         <a role="link" href="#" class="button">Learn more</a>
       </section>
 
@@ -213,7 +217,7 @@
             <label for="select-dog">Dog<figure class="canine-icon"></figure></label>
             <input id="select-dog" type="radio" name="pet-type" value="Dog">
           </div>
-          <span class="or">or</span>
+          <span class="or">Or</span>
           <div class="felion">
             <label for="select-cat">Cat<figure class="icon-cat"></figure></label>
             <input id="select-cat" type="radio" name="pet-type" value="Cat">
@@ -231,7 +235,7 @@
         <button role="button" type="submit">Get Quote</button>
         <span>Or call 1-877-725-2747</span>
         <div class="satisfaction-details">
-          <p>If you're not 100% satisfied in the first 30 days, We'll refund your full premium<br><small>*See Disclaimers</small></p>
+          <p>If you're not 100% satisfied in the first 30 days, we'll refund your full premium<br><small>*See Disclaimers</small></p>
         </div>
       </div>
     </div>
@@ -265,14 +269,14 @@
         <!-- /Navigation removal? -->
 
           <p>Copyright &copy; PetPartners, Inc. &reg; All Rights Reserved | Pet insurance Plans<br>AKC and the AKC logo are trademarks of the <a role="link" href="#">American Kennel Club</a>.</p>
-          <img src="http://placehold.it/150x85" width="150" height="85" alt>
+          <img src="libs/img/NAPIHA-RGB-word-hor.jpg" width="150" height="55" alt>
         </div>
       </div>
       <div class="social">
         <ul role="list">
-          <li role="listitem"><a role="link" href="#" class="fb">Facebook</a></li>
-          <li role="listitem"><a role="link" href="#" class="twt">Twitter</a></li>
-          <li role="listitem"><a role="link" href="#" class="gplus">Google+</a></li>
+          <li role="listitem"><a role="link" href="#" class="fb"><img src="libs/img/facebook.png" width="36">Facebook</a></li>
+          <li role="listitem"><a role="link" href="#" class="twt"><img src="libs/img/twitter.png" width="36">Twitter</a></li>
+          <li role="listitem"><a role="link" href="#" class="gplus"><img src="libs/img/i_google+.png" width="36">Google+</a></li>
         </ul>
       </div>
     </div>
@@ -280,6 +284,11 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <!--script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script-->
   <script src="libs/js/bx-slider.min.js"></script>
+  <svg class="hidden">
+    <defs>
+      <path id="shape-tab" d="M100,25C79.568,25,84.815,0,59.692,0H11.149C5.027,0,0,4.634,0,10.385V25"/>
+    </defs>
+  </svg>
   <script>
     $(function(){
 

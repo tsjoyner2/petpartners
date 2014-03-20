@@ -746,6 +746,7 @@ label {
     margin: 0;
     float:none;
     display: block;
+    box-shadow:0 0 #fff;
     width: 100%;
 }
 

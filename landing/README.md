@@ -1,4 +1,4 @@
 petpartners
 ===========
 
-Landing page for petpartners
+Quick landing creation from template.

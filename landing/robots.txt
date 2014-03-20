@@ -1,7 +1,3 @@
 User-agent: *
-Crawl-delay: 5
-Disallow: /cgi-bin/
-Disallow: /libs/css/
-Disallow: /libs/js/
-Disallow: /libs/font/
-Sitemap: http://petparthers.com/sitemap.gz
+Disallow: /
+

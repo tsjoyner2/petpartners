@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--
+
+  To Do:
+
+  - move all conditional comments to :root
+  - Creat SVG Paths for vectored images
+  - "learn more" icons
+  - Remove inline CSS
+
+  Known Issues:
+
+  -"pet name" in second quote area is misplaced under 999px
+  - Both quote areas need refining from breakpoints 600px wide to 850px wide.
+  - "or" in 2nd quote area is offset left from 999px up.
+  - Main list/testimonials needs refining from 600px to 850px as well.
+  - 3 column area needs margins or no border radius from 600px to 999px wide.
+  - "Get a quote" title (in 1st quote area) wraps on android.
+  - odd horizontal scroll on android.
+  - needs fallback *.png images for mozilla
+  - issues with fonts in linux firefox.
+
+-->
+
 <head>
 
   <meta charset="utf-8">
@@ -212,7 +235,7 @@
   <section class="quote-form full-width cf">
     <div class="inner">
       <h2>Satisfaction Guaranteed. Get a quote or call us at 1-866-725-2747</h2>
-      <div class="pet-type">
+      <div class="pet-type cf">
         <div class="canine">
           <label for="select-dog">Dog
             <figure class="canine-icon"></figure>
@@ -248,7 +271,6 @@
     </div>
   </section>
 
-
   <footer role="contentinfo" class="mastfoot">
     <div class="inner">
       <p>
@@ -266,17 +288,17 @@
 
           <!-- Navigation shouldn't be present on landing pages -->
 
-          <nav role="navigation">
-            <a role="link" href="#">Home</a>|
-            <a role="link" href="#">Get a Quote</a>|
-            <a role="link" href="#">Activate Trial</a>|
-            <a role="link" href="#">Our Plans</a>
-            <br>
-            <a role="link" href="#">Policy Holders</a>|
-            <a role="link" href="#">About Us</a>|
-            <a role="link" href="#">Privacy Policy</a>|
-            <a role="link" href="#">Contact Us</a>
-          </nav>
+            <nav role="navigation">
+              <a role="link" href="#">Home</a>|
+              <a role="link" href="#">Get a Quote</a>|
+              <a role="link" href="#">Activate Trial</a>|
+              <a role="link" href="#">Our Plans</a>
+              <br>
+              <a role="link" href="#">Policy Holders</a>|
+              <a role="link" href="#">About Us</a>|
+              <a role="link" href="#">Privacy Policy</a>|
+              <a role="link" href="#">Contact Us</a>
+            </nav>
 
           <!-- /Navigation removal? -->
 
@@ -320,7 +342,6 @@
   });
   </script>
 
-  <!-- Add all images -->
   <svg class="hidden">
     <defs>
       <path id="shape-tab" d="M100,25C79.568,25,84.815,0,59.692,0H11.149C5.027,0,0,4.634,0,10.385V25" />
@@ -330,22 +351,3 @@
 </body>
 
 </html>
-<fieldset style="display:none">
-  <!--[if !IE | (gte IE 8)]-->
-    <legend id="title1" class="desc">Select a Choice</legend>
-  <!--[endif]-->
-  <!--[if lt IE 8]>
-    <label id="title1" class="desc">Select a Choice</label>
-  <![endif]-->
-  <div>
-    <input id="radioDefault_1" name="Field1" type="hidden" value="">
-    <span>
-      <input id="Field1_0" name="Field1" type="radio" class="field radio" value="First Choice" tabindex="1" onchange="handleInput(this);" onmouseup="handleInput(this);" checked="checked">
-      <label class="choice" for="Field1_0">First Choice</label>
-    </span>
-    <span>
-      <input id="Field1_1" name="Field1" type="radio" class="field radio" value="Second Choice" tabindex="2" onchange="handleInput(this);" onmouseup="handleInput(this);">
-      <label class="choice" for="Field1_1">Second Choice</label>
-    </span>
-  </div>
-</fieldset>

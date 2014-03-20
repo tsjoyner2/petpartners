@@ -733,9 +733,8 @@ label {
 
 .or {
     font-size: 1.5rem;
-    left: 30%;
-    margin-left: 35px;
-    margin-top: 25px;
+	left: 47%;
+	top: 50%;
     position: absolute;
 }
 
@@ -769,7 +768,10 @@ label {
 
 .full-width .pet-info { padding-top: 40px }
 
-.full-width .satisfaction { padding-right: 0 }
+.full-width .satisfaction { 
+	padding-right: 0;
+	padding-top:25px;
+}
 
 .full-width {
     box-shadow: 0 0 #fff;
@@ -785,7 +787,6 @@ label {
 
 .satisfaction-details {
     display: block;
-    height: 100px;
     max-width: 250px;
     margin: 0 auto 15px;
 }
@@ -1146,6 +1147,8 @@ optgroup { font-weight: 700 }
         padding-top: 15px;
     }
 
+    .masthead { box-shadow: 0 5px 0 0 #a7bbca; }
+
     .tagline {
         width: 60%;
         padding-top: 25px;
@@ -1209,7 +1212,8 @@ optgroup { font-weight: 700 }
         float: left;
         height: auto;
         margin: 0 .7%;
-        padding: 10px 25px 0;
+        padding-left:25px;
+        padding-right:25px;
         vertical-align: middle;
         width: 31%;
     }
@@ -1230,11 +1234,6 @@ optgroup { font-weight: 700 }
     .why-us { margin-right: 0 }
 
     .pet-costs { margin-left: 0 }
-
-    .masthead {
-        background: #4c7bbb;
-        box-shadow: 0 5px 0 0 #a7bbca;
-    }
 
     .main h1 { max-width: 740px }
 

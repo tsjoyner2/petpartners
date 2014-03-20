@@ -6,7 +6,7 @@
   To Do:
 
   - move all conditional comments to :root
-  - Creat SVG Paths for vectored images
+  - Creat SVG Paths for vectored images/<figure>
   - "learn more" icons
   - radio buttons togglable
   - quote area rework
@@ -76,21 +76,20 @@
             <span style="margin-top:-70px;padding:25px 0 25px 15px;">Get a Quote</span>
           </h2>
           <div class="pet-type cf" style="padding-top:25px;">
-            <form>
-              <input id="radioDefault" name="pet-type" type="hidden" value>
-              <div class="canine">
-                <label for="select-dog">Dog
-                  <figure class="canine-icon"></figure>
-                </label>
-                <input id="select-dog" type="radio" name="pet-type" value="Dog">
-              </div>
-              <span class="or">Or</span>
-              <div class="felion">
-                <label for="select-cat">Cat
-                  <figure class="icon-cat"></figure>
-                </label>
-                <input id="select-cat" type="radio" name="pet-type" value="Cat">
-              </div>
+            <input id="radioDefault" name="pet-type" type="hidden" value>
+            <div class="canine">
+              <label for="select-dog">Dog
+                <i></i>
+              </label>
+              <input id="select-dog" type="radio" name="pet-type" value="Dog">
+            </div>
+            <span class="or">Or</span>
+            <div class="felion">
+              <label for="select-cat">Cat
+                <i></i>
+              </label>
+              <input id="select-cat" type="radio" name="pet-type" value="Cat">
+            </div>
           </div>
           <div class="pet-info">
             <label for="pet-name">Pet's Name</label>
@@ -109,7 +108,6 @@
                 <small>*See Disclaimers</small>
               </p>
             </div>
-            </form>
           </div>
         </section>
 
@@ -240,17 +238,17 @@
       <h2>Satisfaction Guaranteed. Get a quote or call us at 1-866-725-2747</h2>
       <div class="pet-type cf">
         <div class="canine">
-          <label for="select-dog">Dog
-            <figure class="canine-icon"></figure>
+          <label for="select-dog2">Dog
+            <i></i>
           </label>
-          <input id="select-dog" type="radio" name="pet-type" value="Dog">
+          <input id="select-dog2" type="radio" name="pet-type" value="Dog">
         </div>
         <span class="or">Or</span>
         <div class="felion">
-          <label for="select-cat">Cat
-            <figure class="icon-cat"></figure>
+          <label for="select-cat2">Cat
+            <i></i>
           </label>
-          <input id="select-cat" type="radio" name="pet-type" value="Cat">
+          <input id="select-cat2" type="radio" name="pet-type" value="Cat">
         </div>
       </div>
       <div class="pet-info">
@@ -315,15 +313,15 @@
         <ul role="list">
           <li role="listitem">
             <a role="link" href="#" class="fb">
-              <img src="libs/img/facebook.png" width="36">Facebook</a>
+              <img src="libs/img/facebook.png" width="36" alt>Facebook</a>
           </li>
           <li role="listitem">
             <a role="link" href="#" class="twt">
-              <img src="libs/img/twitter.png" width="36">Twitter</a>
+              <img src="libs/img/twitter.png" width="36" alt>Twitter</a>
           </li>
           <li role="listitem">
             <a role="link" href="#" class="gplus">
-              <img src="libs/img/i_google+.png" width="36">Google+</a>
+              <img src="libs/img/i_google+.png" width="36" alt>Google+</a>
           </li>
         </ul>
       </div>

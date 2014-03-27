@@ -210,6 +210,33 @@ samp {
     font-size: 1rem;
 }
 
+blockquote:before{
+    content:"";
+    position:absolute;
+    margin-left:-5px;
+    margin-top:-5px;
+    background:url("../img/left-quote.svg");
+    background-size:26px;
+    background-repeat:no-repeat;
+    height:20px;
+    width:20px;
+    opacity:.2;
+    padding:25px;
+}
+
+blockquote:after{
+    content:"";
+margin-left: 75px;
+margin-top: -45px;
+    background:url("../img/right-quote.svg");
+    position:absolute;
+    opacity:.2;
+    background-size:26px;
+    background-repeat:no-repeat;
+    height:20px;
+    width:20px;
+    padding:25px;
+}
 ul,
 ol {
 	padding-left: 15px;

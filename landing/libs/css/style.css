@@ -209,12 +209,14 @@ samp {
     font-family: monospace, monospace;
     font-size: 1rem;
 }
-
+blockquote{
+    position:relative;
+}
 blockquote:before{
     content:"";
+    top:-5px;
+    left:-5px;
     position:absolute;
-    margin-left:-5px;
-    margin-top:-5px;
     background:url("../img/left-quote.svg");
     background-size:26px;
     background-repeat:no-repeat;
@@ -226,10 +228,10 @@ blockquote:before{
 
 blockquote:after{
     content:"";
-margin-left: 75px;
-margin-top: -45px;
     background:url("../img/right-quote.svg");
     position:absolute;
+    bottom:15px;
+    right:0;
     opacity:.2;
     background-size:26px;
     background-repeat:no-repeat;
@@ -924,7 +926,11 @@ ul.bxslider { padding-left: 0!important }
     max-width: 250px;
     margin: 0 auto 15px;
 }
-
+.quote-page .satisfaction-details,
+ .satisfaction-details img,
+ .satisfaction-details p{
+    margin:0;
+}
  .satisfaction-details img,
  .satisfaction-details p {
      display: inline-block;

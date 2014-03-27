@@ -40,17 +40,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
   <meta http-equiv="cleartype" content="on">
 
-  <link rel="stylesheet" href="./libs/css/css-neat.css?v=2384979sf9sd87987">
+  <link rel="stylesheet" href="./libs/css/style.css?v=1345">
   <!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]-->
 
 </head>
 
-<body role="document">
+<body role="document" class="landing">
 
   <header role="banner" class="masthead">
     <div class="inner">
       <div class="logo">
-        <img src="libs/img/logo.svg" width="185" height="85" alt>
+        <img src="libs/img/akc-logo-wht.svg" width="225" alt>
       </div>
       <div class="tagline">
         <strong>Protected over 1.5 million pets since 2003</strong>
@@ -67,8 +67,8 @@
     <div class="inner">
       <h1 role="heading">Avoid unexpected vet bills so you can make the right choice about your pet's future</h1>
       <div class="cf">
-
-        <section class="quote-form" style="padding:0;border-top-left-radius:0;position:relative;margin-top:35px;">
+      <form action="./quote" method="GET" novalidate>
+        <fieldset class="quote-form" style="padding:0;border-top-left-radius:0;position:relative;margin-top:35px;">
           <h2 style="position:absolute;left:0;top:-49px;width:200px;padding-bottom:25px;">
             <svg viewBox="0 0 100 25" class="shape-tab" style="height:50px;fill: #0066bc;">
               <use xlink:href="#shape-tab"></use>
@@ -76,12 +76,12 @@
             <span style="margin-top:-70px;padding:25px 0 25px 15px;">Get a Quote</span>
           </h2>
           <div class="pet-type cf" style="padding-top:25px;">
-            <input id="radioDefault" name="pet-type" type="hidden" value>
+            <input id="radioDefault" name="pet-type" type="hidden" value="dog" required>
             <div class="canine">
               <label for="select-dog">Dog
                 <i></i>
               </label>
-              <input id="select-dog" type="radio" name="pet-type" value="Dog">
+              <input id="select-dog" type="radio" name="pet-type" value="cat">
             </div>
             <span class="or">Or</span>
             <div class="felion">
@@ -94,6 +94,7 @@
           <div class="pet-info">
             <label for="pet-name">Pet's Name</label>
             <input id="pet-name" type="text" placeholder="e.g. OctoMonster">
+
             <select>
               <option>Select Breed or Mix</option>
               <option>...</option>
@@ -101,7 +102,7 @@
             <button role="button" type="submit">Get Quote</button>
             <span>Or call 1-877-725-2747</span>
             <div class="satisfaction-details">
-              <img src="libs/img/30-day.png" width="85" height="85" alt>
+              <img src="libs/img/svg/icon-guarantee.svg" width="85" height="85" alt>
               <p>
                 If you're not 100% satisfied in the first 30 days, we'll refund your full premium
                 <br>
@@ -109,7 +110,8 @@
               </p>
             </div>
           </div>
-        </section>
+        </fieldset>
+        </form>
 
         <section class="description">
           <div class="list-details">
@@ -331,6 +333,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <!--script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script-->
   <script src="libs/js/bx-slider.min.js"></script>
+  <script src="libs/js/svgeezy.min.js"></script>
   <script>
   $(function() {
 
@@ -340,15 +343,61 @@
       speed: 500
     });
 
+    svgeezy.init(false, 'png');
+
   });
+
+    $(document).ready(function () {
+      /*
+       * check browser supports local storage
+       */
+      if (localStorage) {
+        /*
+         * if form field values exist in local storage use
+         * them to populate the form when the page loads
+         */
+        if (localStorage.type) {
+          $("#breed-type").find("option[value=" + localStorage.type + "]").attr("selected", true);
+        }
+        if (localStorage.subscribe === "checked") {
+          $("#pet-type").attr("checked", "checked");
+        }
+        
+        /*
+         * when a form field changes store it's value in local storage
+         */
+        $("input,select,textarea").change(function(){
+          $this = $(this);
+          localStorage[$this.attr("name")] = $this.val();
+        });
+        $("input[type=checkbox],input[type=radio]").change(function(){
+          $this = $(this);
+          localStorage[$this.attr("name")] = $this.attr("checked");
+        });
+        
+        //$("form")
+          /*
+           * clear local storage when the form is submitted
+           */
+          //.submit(function(){
+            //localStorage.clear();
+          //})
+          /* 
+           * output local storage to the console each time the form changes
+           * (you may want to remove this code on the production server)
+           */
+          .change(function(){
+            console.log(localStorage);
+          });
+      }
+    });
   </script>
 
-  <svg class="hidden">
-    <defs>
-      <path id="shape-tab" d="M100,25C79.568,25,84.815,0,59.692,0H11.149C5.027,0,0,4.634,0,10.385V25" />
-    </defs>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="hidden">
+    <symbol>
+      <path id="shape-tab" d="M100,25C79.568,25,84.815,0,59.692,0H11.149C5.027,0,0,4.634,0,10.385V25"></path>
+    </symbol>
   </svg>
-
+</div>
 </body>
-
 </html>

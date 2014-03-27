@@ -209,10 +209,10 @@ samp {
     font-family: monospace, monospace;
     font-size: 1rem;
 }
-blockquote{
+.quote-page blockquote{
     position:relative;
 }
-blockquote:before{
+.quote-page blockquote:before{
     content:"";
     top:-5px;
     left:-5px;
@@ -226,7 +226,7 @@ blockquote:before{
     padding:25px;
 }
 
-blockquote:after{
+.quote-page blockquote:after{
     content:"";
     background:url("../img/right-quote.svg");
     position:absolute;

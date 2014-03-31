@@ -1,31 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!--
-
-  To Do:
-
-  - move all conditional comments to :root
-  - Creat SVG Paths for vectored images/<figure>
-  - "learn more" icons
-  - radio buttons togglable
-  - quote area rework
-  - Remove inline CSS
-
-  Known Issues:
-
-  - <select> paddings needs adjusting
-  -"pet name" in second quote area is misplaced under 999px
-  - Both quote areas need refining from breakpoints 600px wide to 850px wide.
-  - "or" in 2nd quote area is offset left from 999px up.
-  - Main list/testimonials needs refining from 600px to 850px as well.
-  - 3 column area needs margins or no border radius from 600px to 999px wide.
-  - "Get a quote" title (in 1st quote area) wraps on android.
-  - odd horizontal scroll on android.
-  - needs fallback *.png images for mozilla
-  - issues with fonts in linux firefox.
-
--->
+<html lang="en" class="no-js">
 
 <head>
 
@@ -45,24 +19,59 @@
 
   <script src="../libs/js/webshim/extras/modernizr-custom.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <!--script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script-->
-  <script src="../libs/js/svgeezy.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
   <script src="../libs/js/webshim/polyfiller.js"></script>
-  <script src="../libs/js/webshim/demo.js" async></script>
+  <script src="../libs/js/svgeezy.min.js"></script>
+  <script src="../libs/js/bx-slider.min.js"></script>
 
   <script>
-  $(document).ready(function() {
-
+  $(document).ready(function () {
     svgeezy.init(false, 'png');
-
     webshims.polyfill();
-
-  });
-  var labelID;
-
-  $('label').click(function() {
-         labelID = $(this).attr('for');
-         $('#'+labelID).trigger('click');
+    var labelID;
+    $('label').click(function () {
+      labelID = $(this).attr('for');
+      $('#' + labelID).trigger('click');
+    });
+    if (typeof (Storage) !== "undefined") {
+      $('form input, form textarea').each(function () {
+        var getInputName = $(this).attr('name');
+        var content = localStorage.getItem(getInputName);
+        if ($(this).is('input[type="checkbox"]') === true) {
+          var numberCheck = $(this).parent().parent().children().find('input').index(this);
+          getInputName = getInputName + numberCheck;
+          content = localStorage.getItem(getInputName);
+          if (content !== null) {
+            $(this).attr('checked', 'checked');
+          }
+          $(this).bind('click', function () {
+            if ($(this).attr('checked') === 'checked') {
+              localStorage[getInputName] = $(this).val();
+            } else {
+              localStorage.removeItem(getInputName);
+            }
+          });
+        } else if ($(this).is('input[type="radio"]') === true) {
+          if (content !== null) {
+            $('input[name="' + getInputName + '"]').each(function () {
+              if ($(this).val() === content) {
+                $(this).attr('checked', 'checked');
+              }
+            });
+          }
+          $(this).bind('click', function () {
+            localStorage[getInputName] = $(this).val();
+          });
+        } else {
+          if (content !== null) {
+            $(this).val(content);
+          }
+          $(this).bind('keyup focusout', function () {
+            localStorage[getInputName] = $(this).val();
+          });
+        }
+      });
+    }
   });
   </script>
 
@@ -81,6 +90,7 @@
       </div>
     </div>
   </header>
+
 
   <nav class="nav cf" style="display:block;">
   <div class="inner">
@@ -101,28 +111,23 @@
         <form method="get" action="#" class="ws-validate" novalidate>
           <fieldset class="quote-form">
             <legend>Tell us more about your pet</legend>
-            <section>
-              <div style="display:inline-block;text-align:center;width:120px;">
+          <section class="pet-type">
+              <div>
                 <label for="select-dog">Dog</label>
-                <svg viewBox="0 0 154 154" style="width:64px;height:64px;fill: #369;margin-left:10px">
-                  <use xlink:href="#doggy"></use>
-                </svg><br>
+                <img src="../libs/img/doggy-blu.svg" width="85" height="76" alt><br>
                 <input id="select-dog" type="radio" name="pet-type" value="Dog" required>
               </div>
-              <div style="display:inline-block;text-align:center;width:120px;">
+              <div>
                 <label for="select-cat">Cat</label>
-                <svg viewBox="0 0 104 104" style="width:64px;height:64px;fill: #369;margin-left:10px">
-                  <use xlink:href="#kitty"></use>
-                </svg><br>
+                <img src="../libs/img/kitty.svg" width="78" height="76" alt><br>
                 <input id="select-cat" type="radio" name="pet-type" value="Cat">
               </div><p>
-              <a href="#">AKC Registration Lookup ></a></p>
             </section>
-            <div class="form-section">
+            <div class="pet-name">
               <label for="pet-name">Pet's Name</label>
               <input id="pet-name" type="text" placeholder="e.g. Fido" value required>
             </div>
-            <div class="form-section">
+            <div class="breed-type">
               <label for="breed">Breed or Mix</label>
               <select id="breed" required>
                 <option value selected>Select Breed or Mix</option>
@@ -176,7 +181,7 @@
             </div>
             <div class="satisfaction-details cf">
               <h4>Satisfaction Guaranteed!</h4>
-              <img src="../libs/img/icon-guarantee.svg" width="85" height="85" alt>
+              <img src="../libs/img/icon-guarantee-blu.svg" class="blue" width="85" height="85" alt>
               <p>
                 If you're not 100% satisfied in the first 30 days, we'll refund your full premium
                 <br>
@@ -291,8 +296,6 @@
       <path id="kitty" d="M80.3 14.6c-0.9-2.5-0.9-4.2-0.1-6.6 1.5-4.2 0.8-4.6-3.2-2.2 -4.1 2.5-10.8 2.7-15 0.6 -4.2-2.2-5.1-1.2-4.4 4.9 0.5 3.6 0.2 6.3-0.8 8.8 -1.9 4.5-4.3 4.9-23.2 4.1l-14.2-0.6 -1.1-7.4c-1.4-8.9-3.3-12.8-7.2-14.8s-6.6-1.9-9 0.5c-2.5 2.5-2.9 10-0.5 10 0.9 0 1.8-1.2 2.2-3 0.8-4.1 2.1-4.7 4.7-2.1 1.9 1.9 2.1 3.2 2 11.9 -0.1 5.3-0.5 12.3-0.9 15.4 -0.7 5.1-0.5 6.4 1.9 11.1 2.8 5.4 2.7 7.3-0.5 11.8 -1.6 2.1-0.6 5.7 3.1 10.7 2.3 3.3 3.7 4.2 5.9 4.2 1.6 0 3.4 0.7 4.1 1.5 1.4 1.7 5.6 2 6.5 0.4 0.4-0.6-0.9-2.5-2.9-4.4 -4.3-3.9-4.5-6.2-0.8-9.8 2.6-2.5 3.4-2.7 11.4-2.7 6.6 0 8.9 0.4 9.9 1.6 0.8 0.9 3.4 5.7 5.9 10.7 4.4 8.9 7 9.6 8.5 9.5s3.6-0.8 4-4.5 0.8-7.8 0.9-11.4c0.2-5.4 0.8-7.2 2.9-10.1 4.1-5.3 7-12.7 7.8-19.8 0.4-3.6 1.3-8.4 2-10.7C81.2 18.8 81.3 17.2 80.3 14.6zM59.6 67.7c-1.8-3.6-3.7-8.5 0.1-8.5S61.3 71.1 59.6 67.7z" />
 
       <path id="doggy" d="M132.5 61.8c-5 0-10.9-2.6-12.7-5.8 -0.9-1.5-2.3-5.6-3.2-9.2 -3.1-12.1-9.4-19.7-18.8-22.5 -6.7-2-17.3-1.9-37.9 0.1 -9.2 0.9-18.2 1.4-20.1 1 -1.9-0.3-5.3-2.2-7.5-4.1l-4.1-3.5 2.9-3.1c1.6-1.7 2.9-4.1 2.9-5.3 0-2.3-3.8-6.5-7.7-8.5 -2.1-1.1-3.4-1.1-10.3-0.4 -6.4 0.6-8 1.3-12 4.9 -5.4 4.9-5.4 8 0.2 12.8 3 2.6 4.4 3.3 4.9 2.4 0.7-1 1.1-1 2.1 0 1.2 1.2 1.7 3.7 4.3 23.5 1.2 9.7 2.1 13 5.1 19 3.5 6.8 3.8 8.4 5.8 26.5 2.1 18.6 2.1 19.4 0.4 22 -2.3 3.5-2.3 6.2 0 6.2 0.9 0 2.3 0.9 3 2.1 1.1 1.6 2.1 2 6 1.7 0 0 2.6 0.2 3.8 0.1s2.2-2 2.3-2.5c0.6-4.3-0.8-6-1.2-8.3 -0.4-2.2 1.7-39.1 3.9-42.1 0.2-0.2 2.4-1.4 5.2-2 7.5-1.4 14.4-4.6 21.9-10.2 7.1-5.2 8.7-5.6 12-3.3 1.9 1.3 8.6 13.1 16.9 29.6 5.4 10.6 6.8 22.8 3.3 27.3 -3.2 4.1-2.2 6 3.3 6.4 5.7 0.4 5.5 0.9 6.1-16.2 0.4-10.4 0.2-12.5-1.6-16.5 -2.9-6.6-3.6-22.9-1.2-30.1l1.8-5.3 2.6 5.4c1.4 2.9 3.7 6.1 5.1 7.1 3 2.1 16 3.7 16 1.9C136 62.3 134.5 61.8 132.5 61.8zM32.7 79.3c0 0-0.4-5.4-0.2-7.7 0.1-1 0.7-2.1 0.7-0.8C33.1 73.7 32.8 78.5 32.7 79.3zM81 47.7c2 1.2 5.2 13.8 14.3 29.9 5.9 10.3 7.9 22.4 4.6 27.1 -3 4.3-1.9 6.1 3.6 6.2 5.7 0.1 5.5 0.6 5.3-16.5 -0.1-10.4-0.4-12.5-2.4-16.4 -3.2-6.4-4.7-22.7-2.7-30" />
-
-      <path id="shape-tab" d="M100,25C79.568,25,84.815,0,59.692,0H11.149C5.027,0,0,4.634,0,10.385V25" />
 
     </defs>
   </svg>

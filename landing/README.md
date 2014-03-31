@@ -11,4 +11,4 @@ To Do
 * make footers like
 * tooltip copy
 * add actual links
-* 
+* disabled "button" until all fields validate
